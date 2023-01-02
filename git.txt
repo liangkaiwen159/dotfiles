@@ -1,0 +1,21 @@
+SSH
+
+1.创建SSH 秘钥
+	ssh-keygen -t rsa -C "1373720113@qq.com"
+
+2. .ssh 文件下找到公钥
+
+3. github官网加入公钥
+
+4. 本地git文件夹 
+
+	git remote -v  查看url用的https还是ssh
+	
+	git remote set-url origin git@github.com:someaccount/someproject.git  设置url同步方式
+	
+
+GIT
+
+1. git init 初始化仓库
+
+2. git remote add origin url 链接远程仓库
