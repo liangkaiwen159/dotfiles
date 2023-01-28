@@ -14,26 +14,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
 
 
-
-__conda_setup="$('/home/xcy/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/xcy/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/xcy/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/xcy/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-
-
-# <<< conda initialize <<<
 
 alias command="gedit /home/xcy/tools/command"
 #export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages
@@ -56,31 +38,19 @@ source /home/xcy/kevin_ws/ros_apriltag_408/devel/setup.zsh
 
 #export DISPLAY=10.56.157.92:0.0
 
-alias starts="sudo docker start sim2real_server"
-alias startc="sudo docker start j_client"
-alias startrc="sudo docker start rmus_client"
-alias startp="sudo docker start zealous_hamilton"
-
-alias stops="sudo docker stop sim2real_server"
-alias stopc="sudo docker stop j_client"
-alias stopp="sudo docker stop zealous_hamilton"
-
-alias sbash="sudo docker exec -it -u sim2real sim2real_server /bin/bash"
-alias cbash="sudo docker exec -it -u sim2real j_client /bin/bash"
-alias rcbash="sudo docker exec -it -u sim2real rmus_client /bin/bash"
-alias pbash="sudo docker exec -it -u sim2real zealous_hamilton /bin/bash"
-
 alias limit="sudo nvidia-smi -pm 1;sudo nvidia-smi -pl 165"
 
-alias sim2real="conda activate number_rec"
-alias rtx="conda activate rtx3070ti"
 alias detectron2="conda activate detectron"
 
-alias dev_start="docker start apollo_dev_xcy"
-alias dev_into="bash ~/kevin_ws/apollo/docker/scripts/dev_into.sh"
-alias dreamview_start="bash /apollo/scripts/bootstrap.sh"
-alias dreamview_stop="bash /apollo/scripts/bootstrap.sh stop"
+alias starts="sh /home/xcy/kevin_ws/sim2real2023/scripts/launch_own.sh"
+alias startc="docker start client"
 
+alias stops="sh /home/xcy/kevin_ws/sim2real2023/scripts/halt.sh"
+alias stopc="docker stop client"
+
+#alias cbash="ssh root@0.0.0.0 -p 5000"
+#alias cbash="docker exec -it client /opt/ros/noetic/env.sh /opt/workspace/devel_isolated/env.sh /opt/ep_ws/devel/env.sh bash"
+alias cbash="docker exec -it client /bin/bash"
 alias set_proxy="export http_proxy="http://127.0.0.1:8089";export https_proxy="http://127.0.0.1:8089""
 alias unset_proxy="unset http_proxy;unset https_proxy"
 
@@ -88,3 +58,4 @@ alias connect_to_titan="ssh -X xcy@10.1.76.228"
 
 alias display2host="export DISPLAY="10.56.2.56:0.0""
 PATH=/opt/go/bin:${PATH}
+export PATH=/home/xcy/.local/bin/:$PATH
