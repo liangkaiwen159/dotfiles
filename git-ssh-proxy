@@ -1,0 +1,7 @@
+Host github.com
+  User git
+  ProxyCommand connect -H 127.0.0.1:8089 %h %p
+  
+Host github.com
+    User git
+    ProxyCommand nc -X connect -x 127.0.0.1:8089 %h %p
