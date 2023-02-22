@@ -8,7 +8,7 @@ fi
 # Path to your oh-my-zsh installation.
 DISABLE_AUTO_UPDATE="true"
 export ZSH=$HOME/.oh-my-zsh
-export PATH="/home/liangkaiwen/miniconda3/bin:$PATH"
+# export PATH="/home/liangkaiwen/miniconda3/bin:$PATH"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -174,4 +174,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-compinit conda
+autoload -U compinit && compinit
