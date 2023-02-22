@@ -17,7 +17,7 @@ fi
 
 
 
-alias command="gedit /home/xcy/tools/command"
+alias command="gedit /home/liangkaiwen/tools/command"
 #export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages
 
 
@@ -33,8 +33,8 @@ export CUDA_HOME=/usr/local/cuda-10.2
 #export LD_LIBRARY_PATH=/usr/local/opencv3/lib
 
 source /opt/ros/noetic/setup.zsh
-source /home/xcy/kevin_ws/ros_ws/devel/setup.zsh
-source /home/xcy/kevin_ws/ros_apriltag_408/devel/setup.zsh
+source /home/liangkaiwen/kevin_ws/ros_ws/devel/setup.zsh
+source /home/liangkaiwen/kevin_ws/ros_apriltag_408/devel/setup.zsh
 
 #export DISPLAY=10.56.157.92:0.0
 
@@ -42,10 +42,10 @@ alias limit="sudo nvidia-smi -pm 1;sudo nvidia-smi -pl 165"
 
 alias detectron2="conda activate detectron"
 
-alias starts="sh /home/xcy/kevin_ws/sim2real2023/scripts/launch_own.sh"
+alias starts="sh /home/liangkaiwen/kevin_ws/sim2real2023/scripts/launch_own.sh"
 alias startc="docker start client"
 
-alias stops="sh /home/xcy/kevin_ws/sim2real2023/scripts/halt.sh"
+alias stops="sh /home/liangkaiwen/kevin_ws/sim2real2023/scripts/halt.sh"
 alias stopc="docker stop client"
 
 #alias cbash="ssh root@0.0.0.0 -p 5000"
@@ -58,4 +58,4 @@ alias connect_to_titan="ssh -X xcy@10.1.76.228"
 
 alias display2host="export DISPLAY="10.56.2.56:0.0""
 PATH=/opt/go/bin:${PATH}
-export PATH=/home/xcy/.local/bin/:$PATH
+export PATH=/home/liangkaiwen/.local/bin/:$PATH
