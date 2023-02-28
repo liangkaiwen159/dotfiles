@@ -1,0 +1,12 @@
+{
+    "name": "python_debug",
+    "type": "python",
+    "request": "attach",
+    "listen": {
+        "host": "127.0.0.1",
+        "port": 5678
+    }
+}
+
+
+import debugpy; debugpy.connect(('127.0.0.1', 5678))
