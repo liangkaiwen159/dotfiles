@@ -1,0 +1,48 @@
+服务器 frps.ini
+
+[common]
+bind_port = 7000
+bind_udp_port = 7001
+# frp管理后台端口，请按自己需求更改
+dashboard_port = 7500
+# frp管理后台用户名和密码，请改成自己的
+dashboard_user = admin
+dashboard_pwd = admin
+enable_prometheus = true
+token = 123456
+# frp日志配置
+log_file = /var/log/frps.log
+log_level = info
+log_max_days = 3
+
+
+
+
+内网客户端 frpc.ini
+[common]
+server_addr = 20.196.211.92
+server_port = 7000
+token = 123456
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 6000
+
+[rdp]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 3389
+remote_port = 3389
+
+
+
+
+
+sudo mkdir -p /etc/frp
+sudo cp frps.ini /etc/frp
+sudo cp frps /usr/bin
+sudo cp systemd/frps.service /usr/lib/systemd/system/
+sudo systemctl enable frps
+sudo systemctl start frps
