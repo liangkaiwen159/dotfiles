@@ -14,9 +14,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.2/lib64
-export PATH=$PATH:/usr/local/cuda-10.2/bin
-export CUDA_HOME=/usr/local/cuda-10.2
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.1/lib64
+export PATH=$PATH:/usr/local/cuda-11.1/bin
+export CUDA_HOME=/usr/local/cuda-11.1
 
 #export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:/home/xcy/kevin_ws/ros_ws/src//ORB_SLAM2/Examples/ROS
 

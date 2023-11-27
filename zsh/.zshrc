@@ -68,7 +68,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -137,7 +136,7 @@ zplug load
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # NOTE: use cc to clear screen. I use tmux ctrl+hjkl switch panel, but ctrl+l conflict with clear-screen
-bindkey "cc" clear-screen
+# bindkey "cc" clear-screen
 
 
 # fzf config, must brew install fzf
