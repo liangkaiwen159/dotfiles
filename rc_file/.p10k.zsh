@@ -35,6 +35,7 @@
     os_icon                 # os identifier
     dir                     # current directory
     vcs                     # git status
+    platform_gpu
     # =========================[ Line #2 ]=========================
     newline                 # \n
     prompt_char             # prompt symbol
@@ -1605,6 +1606,13 @@
     prompt_example
   }
 
+  function prompt_platform_gpu() {
+  local gpu_name=$(nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits | head -n 1 | sed 's/NVIDIA GeForce//i' | sed 's/NVIDIA //i' | sed 's/^ *//')
+  local gpu_num=$(nvidia-smi -L | wc -l)
+  [[ -n $gpu_name ]] && p10k segment -f 208 -t "$gpu_name*$gpu_num"
+  }
+
+
   # User-defined prompt segments can be customized the same way as built-in segments.
   # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
   # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
@@ -1646,3 +1654,4 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
