@@ -24,15 +24,14 @@ export CUDA_HOME=/usr/local/cuda-10.2
 #export PKG_CONFIG_PATH=/usr/local/opencv3/lib/pkgconfig
 #export LD_LIBRARY_PATH=/usr/local/opencv3/lib
 
-source /opt/ros/noetic/setup.zsh
-source /home/liangkaiwen/kevin_ws/ros_ws/devel/setup.zsh
-source /home/liangkaiwen/kevin_ws/ros_apriltag_408/devel/setup.zsh
+# source /opt/ros/noetic/setup.zsh
+# source /home/liangkaiwen/kevin_ws/ros_ws/devel/setup.zsh
+# source /home/liangkaiwen/kevin_ws/ros_apriltag_408/devel/setup.zsh
 
 #export DISPLAY=10.56.157.92:0.0
 alias set_proxy="export http_proxy="http://127.0.0.1:8089";export https_proxy="http://127.0.0.1:8089""
 alias unset_proxy="unset http_proxy;unset https_proxy"
 
 alias connect_to_titan="ssh -X xcy@10.1.76.228"
-
 alias display2host="export DISPLAY="10.56.2.56:0.0""
 export PATH=/home/liangkaiwen/.local/bin/:$PATH
