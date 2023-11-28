@@ -1,0 +1,1 @@
+printf "%-12s" "$(printf "%.2f" "$result") ${SIZE[$size]}"
