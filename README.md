@@ -10,7 +10,7 @@ sudo apt install tmux
 > 第二步 git clone
 
 ``` shell
-git clone https://github.com/thiagoyh/dotfiles.git ~/dotfiles --recursive
+git clone https://github.com/liangkaiwen159/dotfiles.git --recursive
 
 cd ~/dotfiles
 # 需要哪个stow哪个
