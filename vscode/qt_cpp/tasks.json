@@ -1,0 +1,120 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "mkdir",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "mkdir",
+            "args": [
+                "-Force",
+                "build"
+            ]
+        },
+        {
+            "label": "qmake-debug",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
+            "command": "qmake",
+            "args": [
+                "../${workspaceFolderBasename}.pro",
+                "-spec",
+                "win32-g++",
+                "\"CONFIG+=debug\"",
+                "\"CONFIG+=qml_debug\""
+            ],
+            "dependsOn": [
+                "mkdir"
+            ]
+        },
+        {
+            "label": "make-debug",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
+            "command": "D:/QT/Tools/mingw810_32/bin/mingw32-make.exe",
+            "args": [
+                "-f",
+                "Makefile.Debug",
+                "-j4"
+            ],
+            "dependsOn": [
+                "qmake-debug"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "run-debug",
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}\\build\\debug"
+            },
+            "command": "${workspaceFolderBasename}.exe",
+            "dependsOn": [
+                "make-debug"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "qmake-release",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
+            "command": "qmake",
+            "args": [
+                "../${workspaceFolderBasename}.pro",
+                "-spec",
+                "win32-g++",
+                "\"CONFIG+=qtquickcompiler\""
+            ],
+            "dependsOn": []
+        },
+        {
+            "label": "make-release",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
+            "command": "D:/QT/Tools/mingw810_32/bin/mingw32-make.exe",
+            "args": [
+                "-f",
+                "Makefile.Release",
+                "-j4"
+            ],
+            "dependsOn": [
+                "qmake-release"
+            ]
+        },
+        {
+            "label": "run-release",
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}\\build\\release"
+            },
+            "command": "${workspaceFolderBasename}.exe",
+            "dependsOn": [
+                "make-release"
+            ]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}\\build"
+            },
+            "command": "mingw32-make",
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

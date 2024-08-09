@@ -1,0 +1,30 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "debug", //修改后
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/${workspaceFolderBasename}.exe", //写完整路径
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}", //工作目录，项目根目录
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:/QT/Tools/mingw810_32/bin/gdb.exe", //选择MinGW中的gdb
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "make-debug", //这跟depend[]很像啊，make就行了，用make编译出exe
+        }
+    ]
+}
